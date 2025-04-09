@@ -28,3 +28,28 @@ tr:nth-child(even) {
 .seleccionar-peticion {
     cursor: pointer;
 }
+.paginacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paginacion a {
+    padding: 8px 12px;
+    margin: 0 4px;
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.paginacion a.pagina-actual {
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fil {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
