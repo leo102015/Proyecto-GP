@@ -1,0 +1,232 @@
+/* Estilos generales para el cuerpo */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    margin-top: 80px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra lateral (sidebar) */
+.sidebar {
+    width: 200px;
+    background-color: #2962ff;
+    color: white;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 80px; /* Ajuste según el tamaño del navbar */
+    bottom: 0;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.hidden {
+    left: -220px; /* Oculta la barra lateral */
+}
+
+/* Estilos del botón */
+.toggle-sidebar-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Estilos para los enlaces en la barra lateral */
+.sidebar a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+/* Efecto hover en los enlaces de la barra lateral */
+.sidebar a:hover {
+    background-color: #0039cb;
+}
+
+/* El submenú está oculto por defecto */
+.submenu {
+    display: none;
+    padding-left: 15px;
+    font-size: 14px;
+    transition: max-height 0.3s ease-out;
+}
+
+
+/* Estilos para el contenido principal */
+.main-content {
+    margin-left: 200px; /* Espacio para la barra lateral */
+    transition: margin-left 0.3s ease-in-out;
+    padding: 20px;
+    width: 110rem;
+}
+
+.sidebar.hidden + .main-content {
+    margin-left: 0; /* Cuando la barra está oculta, ocupa todo el ancho */
+}
+
+/* Estilos para la cabecera (header) */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Esto alinea todo el contenido a la derecha */
+    align-items: center;
+    padding: 10px;
+    background-color: #e1e1e1;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para la información del administrador */
+.header .admin-info {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.header .admin-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.sesion button{
+    background-color: #fa2929;
+    font-size: 16px;
+    border-radius: 8px;
+    border-color: #cf1d1d;
+}
+
+.sesion button:hover{
+    background-color: #cf1d1d;
+    font-size: 16px;
+    border-radius: 8px;
+    
+}
+
+.sesion a{
+    text-decoration: none;
+    color: #fff;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+header {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+:root {
+    --bs-breakpoint-xs: 0;
+    --bs-breakpoint-sm: 576px;
+    --bs-breakpoint-md: 768px;
+    --bs-breakpoint-lg: 992px;
+    --bs-breakpoint-xl: 1200px;
+    --bs-breakpoint-xxl: 1400px;
+}
+
+:root, [data-bs-theme=light] {
+    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-border-radius: 0.375rem;
+}
+
+.navbar.transparent {
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0.25rem;
+    --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+    --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+    --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+    --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-brand-padding-y: 0.15625rem;
+    --bs-navbar-brand-margin-end: 1rem;
+    --bs-navbar-brand-font-size: 1.25rem;
+    --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-nav-link-padding-x: 0.5rem;
+    --bs-navbar-toggler-padding-y: 0.125rem;
+    --bs-navbar-toggler-padding-x: 0.75rem;
+    --bs-navbar-toggler-font-size: 1.25rem;
+    --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
+    --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+    --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+    --bs-navbar-toggler-focus-width: 0.25rem;
+    --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    unicode-bidi: isolate;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+a:link {
+        cursor: url(data:image/png;base64,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) 11 2, pointer !important;
+}
+
+.navbar-brand {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: var(--bs-navbar-brand-font-size);
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-administracion {
+    width: 130px;
+}
+
+img, svg {
+    vertical-align: middle;
+}

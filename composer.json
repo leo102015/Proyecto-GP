@@ -1,0 +1,17 @@
+{
+    "name": "pablos/is",
+    "autoload": {
+        "psr-4": {
+            "Pablos\\Is\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leo102015",
+            "email": "149451078+leo102015@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^3.5"
+    }
+}

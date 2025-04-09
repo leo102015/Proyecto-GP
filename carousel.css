@@ -1,0 +1,36 @@
+.carousel {
+    max-width: 30rem;
+    margin: auto;    
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.5s ease;
+}
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.carousel-caption p {
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%); /* Flechas blancas */
+}
+.carousel-indicators [data-bs-target] {
+    background-color: #fff; /* Color blanco */
+    width: 12px; /* Tamaño del indicador */
+    height: 12px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel-indicators .active {
+    background-color: #ff5722; /* Indicador activo con color llamativo */
+    width: 14px;
+    height: 14px;
+}
