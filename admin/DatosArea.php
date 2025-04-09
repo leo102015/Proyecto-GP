@@ -1,9 +1,6 @@
 <?php
 // Conectar a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "Previus22";
-$dbname = "bd_nats";
+require("../BD.php");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

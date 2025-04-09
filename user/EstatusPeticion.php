@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "Previus22";
-$dbname = "bd_nats";
+require("../BD.php");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

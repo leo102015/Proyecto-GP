@@ -2,11 +2,7 @@
 
 session_start(); // Inicia la sesión
 
-$servername = "localhost";
-$username = "root";
-$password = "Previus22";
-//$password = "";
-$dbname = "bd_nats";
+require("../BD.php");
 
 //Conexión bd_nats
 $conn = new mysqli($servername, $username, $password, $dbname);
