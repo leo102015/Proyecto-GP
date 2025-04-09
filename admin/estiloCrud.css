@@ -1,0 +1,29 @@
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btn-editar {
+    background-color: #ffc107;
+    color: #fff;
+}
+.btn-eliminar {
+    background-color: #dc3545;
+    color: #fff;
+}
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+.pagination .page-item.active .page-link {
+    background-color: #2962ff;
+    border-color: #2962ff;
+}
