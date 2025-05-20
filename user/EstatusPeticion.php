@@ -102,6 +102,8 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Estatus de Petición</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../estiloBarras.css">
     <link rel="stylesheet" href="../formulario.css">
     <link rel="stylesheet" href="EstatusPeticion.css">
@@ -137,19 +139,19 @@ $conn->close();
             </div>
 
             <form method="POST" action="">
-                <table>
+                <table class="mb-4">
                     <thead>
                         <tr>
                             <th>Seleccionar</th>
                             <th>ID Petición</th>
-                            <th>Nombre Ciudadano</th>
+                            <th>Nombre Ciudadano</th>                            
+                            <th>Asunto</th>
                             <th>
                                 <a class="fil"
                                     href="?<?php echo http_build_query(['estatus_filtro' => $estatus_filtro, 'orden' => $orden === 'ASC' ? 'DESC' : 'ASC']); ?>">
                                     Fecha Registro <?= $orden === 'ASC' ? '↑' : '↓' ?>
                                 </a>
                             </th>
-                            <th>Asunto</th>
                             <th>Estatus</th>
                             <th>Fecha Finalización</th>
                         </tr>
@@ -179,7 +181,7 @@ $conn->close();
 
                 <div class="seleccionar-estatus">
                     <label for="estatus">Seleccionar estatus:</label>
-                    <select id="estatus" name="estatus" required>
+                    <select id="estatus" name="estatus" required class="me-4">
                         <option value="">Selecciona un estatus</option>
                         <option value="COMPLETADA">Completada</option>
                         <option value="EN PROCESO">En proceso</option>

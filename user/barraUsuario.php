@@ -14,13 +14,13 @@
     <a href="#" class="peticiones" onclick="toggleSubmenu('peticiones')">► Peticiones</a>
     <div class="submenu" id="submenu-peticiones">
         <a href="CrearPeticion.php" onclick="cargarPagina('CrearPeticion.php')">Crear petición</a>
-        <a href="EvidenciaPeticion.php" onclick="cargarPagina('EvidenciaPeticion.php')">Evidencia de petición</a>
         <a href="EstatusPeticion.php" onclick="cargarPagina('EstatusPeticion.php')">Estatus peticion</a>
+        <a href="EvidenciaPeticion.php" onclick="cargarPagina('EvidenciaPeticion.php')">Evidencia de petición</a>
     </div>
 
     <a href="GenerarReporte.php" onclick="cargarPagina('GenerarReporte.php')">► Generar reporte</a>
 
-    <a href="ConsultarArea.php" onclick="cargarPagina('ConsultarArea.php')">► Consultar area</a>
+    <a href="ConsultarArea.php" onclick="cargarPagina('ConsultarArea.php')">► Consultar Departamento</a>
 </div>
 <script>
     function toggleSubmenu(menu) {

@@ -17,12 +17,6 @@ if (isset($_SESSION['id_usuario'])) {
 } else {
     die("Error: Usuario no autenticado.");
 }
-
-if (!isset($_SESSION['login_exitoso'])) {
-    header("Location: Login.html"); // Si no está autenticado, redirige al login
-    exit(); // Asegúrate de que no siga ejecutándose el código después de la redirección
-}
-
 ?>
 
 <!DOCTYPE html>

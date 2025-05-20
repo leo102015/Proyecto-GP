@@ -6,6 +6,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+session_start(); // Inicia la sesión
+if (isset($_SESSION['id_usuario'])) {
+    $id_usuario = $_SESSION['id_usuario']; // Obtener el ID del usuario
+    $nombre_usuario = $_SESSION['nombre_usuario']; // Obtener el nombre del usuario
+} else {
+    die("Error: Usuario no autenticado.");
+}
 
 $registrosPorPagina = 10;  // Cantidad de usuarios por página
 $paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;

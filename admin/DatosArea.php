@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php require("headerAdmin.php"); ?>
 
         <div class="container">
-            <h2>Editar Área</h2>
+            <h2>Editar Departamento</h2>
 
             <?php if (!empty($errores)): ?>
                 <div class="alert alert-danger">
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <form method="POST" action="">
                 <div class="mb-3">
-                    <label for="nombre_area" class="form-label">Nombre del Área</label>
+                    <label for="nombre_area" class="form-label">Nombre del Departamento</label>
                     <input type="text" class="form-control" id="nombre_area" name="nombre_area" value="<?= $area['nombre_area'] ?>" required>
                 </div>
 

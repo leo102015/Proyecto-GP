@@ -7,6 +7,14 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+session_start(); // Inicia la sesión
+if (isset($_SESSION['id_usuario'])) {
+    $id_usuario = $_SESSION['id_usuario']; // Obtener el ID del usuario
+    $nombre_usuario = $_SESSION['nombre_usuario']; // Obtener el nombre del usuario
+} else {
+    die("Error: Usuario no autenticado.");
+}
+
 $registrosPorPagina = 10;  // Cantidad de usuarios por página
 $paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 $offset = ($paginaActual - 1) * $registrosPorPagina;
@@ -40,13 +48,13 @@ $result = $conn->query($sql);
         <?php require("headerAdmin.php"); ?>
 
         <div class="table-container">
-            <h2 class="mb-4">Gestión de Áreas</h2>
+            <h2 class="mb-4">Gestión de Departamentos</h2>
 
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Nombre de Área</th>
+                        <th>Nombre de Departamento</th>
                         <th>Nombre de Director</th>
                         <th>Teléfono del Director</th>
                         <th>Email del Director</th>

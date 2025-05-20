@@ -25,7 +25,7 @@ if ($stmt) {
     $stmt->bind_param("ssss", $nombre_area, $nombre_director, $telefono_director, $email_director);
 
     if ($stmt->execute()) {
-        echo '<script language="javascript">alert("Area Agregada Correctamente");</script>';
+        echo '<script language="javascript">alert("Departamento Agregado Correctamente");</script>';
 
         header("refresh:1;url=AdministradorInicioI.php");
         exit();

@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="Login.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar_home navbar-expand-ig p-0 fixed-top transparent">
-            <div class="container-fluid">
-                <a class="navbar-brand">
-                    <img src="./src/img/logo-administracion-blanco.png" class="logo-administracion" />
-                </a>
-            </div>
-        </nav>
+      <nav
+        class="navbar navbar_home navbar-expand-ig p-0 fixed-top transparent"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img
+              src="./src/img/logo-administracion-blanco.png"
+              class="logo-administracion"
+            />
+          </a>
+        </div>
+      </nav>
     </header>
     <div class="login-container">
-        <div class="left-section">
-            <!-- Icono de correo -->
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/email-open.png" alt="Correo" />
-        </div>
-        <div class="right-section">
-            <h2>Inicia sesión</h2>
-            <form action="Login.php" method="POST" id="loginForm">
-                <!-- Campo de correo electrónico -->
-                <div class="form-group">
-                    <label for="password">Correo electrónico:</label>
-                    <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
-                </div>
+      <div class="left-section">
+        <!-- Icono de correo -->
+        <img
+          src="https://img.icons8.com/ios-filled/100/ffffff/email-open.png"
+          alt="Correo"
+        />
+      </div>
+      <div class="right-section">
+        <h2>Inicia sesión</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Correo electrónico"
+              required
+            />
+          </div>
 
-                <!-- Campo de contraseña -->
-                <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password" placeholder="Contraseña" required
-                        oninput="mostrarAyudaContraseña()" />
-                    <div id="mensaje-contraseña" class="ayuda"></div>
-                </div>
+          <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
 
-                <button type="submit">Iniciar sesión</button>
-            </form>
-        </div>
+          <div id="error-message" style="color: red; margin-bottom: 10px"></div>
+
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
 
+  <script>
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevenir recarga
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorDiv = document.getElementById("error-message");
+
+        fetch("Login.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          credentials: "include", // 👈 NECESARIO para que se guarde la sesión
+          body: `email=${encodeURIComponent(
+            email
+          )}&password=${encodeURIComponent(password)}`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              window.location.href = data.redirect;
+            } else {
+              errorDiv.textContent = data.message;
+            }
+          })
+          .catch((error) => {
+            errorDiv.textContent =
+              "Ocurrió un error al intentar iniciar sesión.";
+            console.error("Error:", error);
+          });
+      });
+  </script>
 </html>

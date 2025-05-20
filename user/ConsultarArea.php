@@ -49,12 +49,12 @@ $conn->close();
     <div class="main-content">
         <?php require("headerUsuario.php"); ?>
         <div class="form-container">
-            <h2>Consultar Área</h2>
+            <h2>Consultar Departamento</h2>
             <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="area">Área:</label>
+                    <label for="area">Departamento:</label>
                     <select id="area" name="nombre_area" required>
-                        <option value="" disabled selected>Seleccione un área</option>
+                        <option value="" disabled selected>Seleccione un Departamento</option>
                         <?php
                         foreach ($areas as $area) {
                             echo "<option value='$area'>$area</option>";
@@ -87,7 +87,7 @@ $conn->close();
             const area = document.getElementById('area').value;
 
             if (!area) {
-                alert("Por favor selecciona un área.");
+                alert("Por favor selecciona un departamento.");
                 return;
             }
 

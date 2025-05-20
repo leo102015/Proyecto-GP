@@ -1,3 +1,12 @@
+<?php
+session_start(); // Inicia la sesión
+if (isset($_SESSION['id_usuario'])) {
+    $id_usuario = $_SESSION['id_usuario']; // Obtener el ID del usuario
+    $nombre_usuario = $_SESSION['nombre_usuario']; // Obtener el nombre del usuario
+} else {
+    die("Error: Usuario no autenticado.");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 

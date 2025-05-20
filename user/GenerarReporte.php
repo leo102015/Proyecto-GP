@@ -193,9 +193,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['formato'])) {
             <h2>Generar Reporte</h2>
             <form method="GET" action="GenerarReporte.php">
                 <div class="form-group">
-                    <label for="area">Área:</label>
+                    <label for="area">Departamento:</label>
                     <select id="area" name="area" required>
-                        <option value="" disabled selected>Seleccione un área</option>
+                        <option value="" disabled selected>Seleccione un departamento</option>
                         <?php foreach ($areas as $area) { echo "<option value='{$area['NOMBRE_AREA']}'>{$area['NOMBRE_AREA']}</option>"; } ?>
                     </select>
                 </div>
