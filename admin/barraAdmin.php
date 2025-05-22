@@ -1,5 +1,5 @@
     <header>
-        <nav class="navbar navbar_home navbar-expand-ig p-0 fixed-top transparent">
+        <nav class="navbar navbar_home navbar-expand-ig p-0 fixed-top transparent rounded-bottom-2">
             <div class="container-fluid">
                 <button class="toggle-sidebar-btn" onclick="toggleSidebar()">☰</button>
                 <a class="navbar-brand">
@@ -8,7 +8,7 @@
             </div>
         </nav>
     </header>
-    <div class="sidebar">
+    <div class="sidebar rounded-end-4">
         <!-- Menú de Inicio -->
         <a href="AdministradorInicioI.php" onclick="cargarPagina('AdministradorInicioI.php')">Inicio</a>
 
